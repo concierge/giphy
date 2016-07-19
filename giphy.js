@@ -21,7 +21,7 @@ exports.search = function (query, callback, waitCallback) {
         q: query,
         limit: 10,
         api_key: exports.config.apiKey,
-        rating: 'pg-13'
+        rating: exports.config.rating || 'pg'
     };
 
     request.get({url: 'http://api.giphy.com/v1/gifs/search', qs: q}, function(error, response, body) {
